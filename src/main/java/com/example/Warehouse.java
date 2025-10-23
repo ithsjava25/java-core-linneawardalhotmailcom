@@ -24,9 +24,8 @@ public class Warehouse{
     //getInstance(String name) returns the same instance per unique name.
     //Factory method to get or create a warehouse instance
     public static Warehouse getInstance(String name){
-        return INSTANCES.computeIfAbsent(name, k -> new Warehouse(name));
+        return INSTANCES.computeIfAbsent(name, _ -> new Warehouse(name));
     }
-    //TODO Delete this method??
     //Default instance
     public static Warehouse getInstance(){
         return getInstance("DefaultWarehouse");

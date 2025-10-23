@@ -10,6 +10,7 @@ public class Main {
 
          //Create a warehouse
          Warehouse warehouse = Warehouse.getInstance("TestWarehouse");
+         Warehouse warehouse2 = Warehouse.getInstance("TestWarehouse2");
 
          //Add a product
          Product milk = new FoodProduct(
