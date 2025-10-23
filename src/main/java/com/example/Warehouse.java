@@ -32,7 +32,6 @@ public class Warehouse{
         return getInstance("DefaultWarehouse");
     }
 
-    //Stub methods
     public void clearProducts(){
         products.clear();
     }
