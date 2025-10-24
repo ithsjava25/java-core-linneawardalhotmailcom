@@ -6,6 +6,10 @@ import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.HashMap;
+import java.util.Map;
+
+
 
 /**
  * Analyzer class that provides advanced warehouse operations.
@@ -13,10 +17,12 @@ import java.util.stream.Collectors;
  */
 class WarehouseAnalyzer {
     private final Warehouse warehouse;
-    
+
+    //Constructor
     public WarehouseAnalyzer(Warehouse warehouse) {
         this.warehouse = warehouse;
     }
+
     
     // Search and Filter Methods
     /**
