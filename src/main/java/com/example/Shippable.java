@@ -10,7 +10,7 @@ public interface Shippable {
      * Returns the weight of the product in kg.
      * @return Weight as a double.
      */
-    Double weight();
+    double weight();
 
     /**
      * Calculates the shipping cost for the product.

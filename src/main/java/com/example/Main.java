@@ -6,14 +6,14 @@ import java.util.UUID;
 
 
 public class Main {
-     static void main(String[] args) {
+     public static void main(String[] args) {
 
          //Create warehouses (demonstrating singleton behavior)
-         Warehouse warehouse = Warehouse.getInstance("TestWarehouse");
-         Warehouse warehouse2 = Warehouse.getInstance("TestWarehouse2");
+         Warehouse warehouse = Warehouse.getInstance("DemoWarehouse");
+         Warehouse warehouse2 = Warehouse.getInstance("DemoWarehouse2");
          IO.println(("Warehouse 1:" + warehouse));
          IO.println(("Warehouse 2:" + warehouse2));
-         IO.println("Same instance? " + (warehouse == Warehouse.getInstance("TestWarehouse")));
+         IO.println("Same instance? " + (warehouse == Warehouse.getInstance("DemoWarehouse")));
 
          //Add products of different types
          Product milk = new FoodProduct(

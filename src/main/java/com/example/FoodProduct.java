@@ -1,6 +1,7 @@
 package com.example;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.UUID;
 
@@ -12,6 +13,8 @@ public class FoodProduct extends Product implements Perishable, Shippable{
     //Expiration date of the food product and the weight in kg
     private final LocalDate expirationDate;
     private final BigDecimal weight;
+
+    private static final BigDecimal SHIPPING_RATE_PER_KG = new BigDecimal("50");
 
     /**
      * Creates a FoodProduct with the given attributes.
@@ -54,13 +57,14 @@ public class FoodProduct extends Product implements Perishable, Shippable{
     }
     //Returns weight as a double (Shippable interface)
     @Override
-    public Double weight(){
+    public double weight(){
         return weight.doubleValue();
     }
     //Calculates shipping cost based on the shipping rule: weight * 50
     @Override
     public BigDecimal calculateShippingCost(){
-        return weight.multiply(new BigDecimal("50"));
+        return weight.multiply(SHIPPING_RATE_PER_KG)
+                .setScale(2, RoundingMode.HALF_UP); //Round to 2 decimal places
     }
 
 

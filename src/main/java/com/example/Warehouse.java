@@ -66,6 +66,7 @@ public class Warehouse{
      * @throws IllegalArgumentException if product is null or has a duplicate ID.
      */
     public void addProduct(Product product){
+        //Validate inputs and check for duplicates BEFORE modifying the list
         if (product == null) {
             throw new IllegalArgumentException("Product cannot be null.");
         }

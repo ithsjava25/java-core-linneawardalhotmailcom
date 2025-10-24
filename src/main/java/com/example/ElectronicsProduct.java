@@ -1,6 +1,7 @@
 package com.example;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.UUID;
 
 /**
@@ -43,7 +44,7 @@ public class ElectronicsProduct extends Product implements Shippable {
     }
     //Returns the weight of the product as a double (for Shippable interface)
     @Override
-    public Double weight(){
+    public double weight(){
         return weight.doubleValue();
     }
 
@@ -58,7 +59,7 @@ public class ElectronicsProduct extends Product implements Shippable {
         if (weight.compareTo(WEIGHT_THRESHOLD) > 0) {
             totalCost = totalCost.add(EXTRA_SHIPPING_COST);
         }
-        return totalCost;
+        return totalCost.setScale(2, RoundingMode.HALF_UP); //Round to 2 decimal places
     }
     //Returns a formatted string with product details including warranty
     @Override
